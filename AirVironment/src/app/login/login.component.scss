@@ -1,0 +1,27 @@
+.login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+  
+  .login-title {
+    color: var(--w);
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  
+  .form-control {
+    background: transparent;
+  }
+  
+  .center {
+    padding-top: 10px;
+    text-align: center;
+  }
+  
+  label {
+    color: var(--w);
+  }

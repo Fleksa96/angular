@@ -1,0 +1,21 @@
+<div class="child-cont">
+  <table class="table">
+    <thead>
+      <tr><th colspan="4">Weather</th></tr>
+      <tr>
+        <th>Temperature</th>
+        <th>Humidity</th>
+        <th>Pollution</th>
+        <th>Timestamps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let temp of temperature; let i = index" >
+        <td>{{temp}}</td>
+        <td>{{humidity[i]}}</td>
+        <td>{{pollution[i]}}</td>
+        <td>{{timestamps[i]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

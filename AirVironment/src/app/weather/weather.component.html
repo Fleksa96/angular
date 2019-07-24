@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div *ngIf='weather; else no_data'>
+    <h5>Latest update: {{ weather.timestamp | date: 'dd.MM.yyyy H:mm' }}</h5>
+    <p><i class="fa fa-thermometer-half"></i> Temperature: {{ weather.temperature }}&#8451;</p>
+    <p><i class="fa fa-tint"></i> Humidity: {{ weather.humidity }}%</p>
+    <p><i class="fa fa-car"></i> Pollution: {{ weather.pollution }}</p>
+  </div>
+
+  <div>
+    Users from secure api end point:
+    <ul>
+      <li *ngFor='let user of users'> {{ user.firstName }} {{ user.lastName }}</li>
+    </ul>
+  </div>
+
+  <button [routerLink]="['weather-table']" (click)="showComp2 = !showComp2">Results</button>
+  <div *ngIf="chart">
+    <canvas #canvas id="canvas" style="height:400px; width: content-box;">{{ chart }}</canvas>
+  </div>
+  <app-weather-table *ngIf="showComp2" [temperature]="temperature" [humidity]="humidity" 
+  [pollution]="pollution" [timestamps]="timestamps"></app-weather-table>
+</div>
+<ng-template #no_data>No data<br>Check your connection<br></ng-template>
